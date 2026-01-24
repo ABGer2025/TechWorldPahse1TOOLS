@@ -12,6 +12,14 @@ public class Application {
 
     public static void main(String[] args)
     {
+        Logger log = LoggerFactory.getLogger(Application.class);
+        try {
+            String one = args[0];
+            String two = args[1];
+            log.info("Application will start with the parameters {} and {}", one, two);
+        } catch (Exception e) {
+            log.info("No parameters provided");
+        }
         SpringApplication.run(Application.class, args);
         // add your code snippet here
     }
